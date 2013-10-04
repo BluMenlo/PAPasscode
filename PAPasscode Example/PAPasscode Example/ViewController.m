@@ -14,6 +14,11 @@
 
 @implementation ViewController
 
+- (void)presentViewController:(UIViewController *)viewControllerToPresent inNavControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
+    UINavigationController *containerNav = [[UINavigationController alloc] initWithRootViewController:viewControllerToPresent];
+    [self presentViewController:containerNav animated:flag completion:completion];
+}
+
 - (IBAction)setPasscode:(id)sender {
     PAPasscodeViewController *passcodeViewController = [[PAPasscodeViewController alloc] initForAction:PasscodeActionSet];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
@@ -21,7 +26,7 @@
     }
     passcodeViewController.delegate = self;
     passcodeViewController.simple = _simpleSwitch.on;
-    [self presentViewController:passcodeViewController animated:YES completion:nil];
+    [self presentViewController:passcodeViewController inNavControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)enterPasscode:(id)sender {
@@ -33,7 +38,7 @@
     passcodeViewController.passcode = _passcodeLabel.text;
     passcodeViewController.alternativePasscode = @"9999";
     passcodeViewController.simple = _simpleSwitch.on;
-    [self presentViewController:passcodeViewController animated:YES completion:nil];
+    [self presentViewController:passcodeViewController inNavControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)changePasscode:(id)sender {
@@ -44,7 +49,7 @@
     passcodeViewController.delegate = self;
     passcodeViewController.passcode = _passcodeLabel.text;
     passcodeViewController.simple = _simpleSwitch.on;
-    [self presentViewController:passcodeViewController animated:YES completion:nil];
+    [self presentViewController:passcodeViewController inNavControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - PAPasscodeViewControllerDelegate
