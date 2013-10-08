@@ -62,6 +62,10 @@
         }
         self.modalPresentationStyle = UIModalPresentationFormSheet;
         _simple = YES;
+		
+		if ( [self respondsToSelector:@selector(edgesForExtendedLayout)] ) {
+			self.edgesForExtendedLayout = UIRectEdgeNone;
+		}
     }
     return self;
 }
