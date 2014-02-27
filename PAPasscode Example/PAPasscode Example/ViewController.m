@@ -21,7 +21,6 @@
         passcodeViewController.backgroundView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
     }
     passcodeViewController.delegate = self;
-    passcodeViewController.simple = _simpleSwitch.on;
     [self presentViewController:passcodeViewController inNavControllerAnimated:YES];
 }
 
@@ -33,7 +32,6 @@
     passcodeViewController.delegate = self;
     passcodeViewController.passcode = _passcodeLabel.text;
     passcodeViewController.alternativePasscode = @"9999";
-    passcodeViewController.simple = _simpleSwitch.on;
     [self presentViewController:passcodeViewController inNavControllerAnimated:YES];
 }
 
@@ -44,7 +42,6 @@
     }
     passcodeViewController.delegate = self;
     passcodeViewController.passcode = _passcodeLabel.text;
-    passcodeViewController.simple = _simpleSwitch.on;
     [self presentViewController:passcodeViewController inNavControllerAnimated:YES];
 }
 
@@ -79,7 +76,6 @@
 }
 
 - (void)viewDidUnload {
-    [self setSimpleSwitch:nil];
     [super viewDidUnload];
 }
 

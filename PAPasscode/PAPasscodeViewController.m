@@ -14,10 +14,6 @@
 #define DIGIT_SPACING   10
 #define DIGIT_WIDTH     61
 #define DIGIT_HEIGHT    53
-#define MARKER_WIDTH    16
-#define MARKER_HEIGHT   16
-#define MARKER_X        22
-#define MARKER_Y        18
 #define MESSAGE_HEIGHT  74
 #define FAILED_LCAP     19
 #define FAILED_RCAP     19
@@ -62,7 +58,6 @@
                 break;
         }
         self.modalPresentationStyle = UIModalPresentationFormSheet;
-        _simple = YES;
 		
 		if ( [self respondsToSelector:@selector(edgesForExtendedLayout)] ) {
 			self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -84,43 +79,30 @@
     [view addSubview:contentView];
     
     CGFloat panelWidth = DIGIT_WIDTH*4+DIGIT_SPACING*3;
-    if (_simple) {
-        UIView *digitPanel = [[UIView alloc] initWithFrame:CGRectMake(0, 0, panelWidth, DIGIT_HEIGHT)];
-        digitPanel.frame = CGRectOffset(digitPanel.frame, (contentView.bounds.size.width-digitPanel.bounds.size.width)/2, PROMPT_HEIGHT);
-        digitPanel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
-        [contentView addSubview:digitPanel];
-        
-        UIImage *backgroundImage = [UIImage imageNamed:@"papasscode_background"];
-        UIImage *markerImage = [UIImage imageNamed:@"papasscode_marker"];
-        CGFloat xLeft = 0;
-        for (int i=0;i<4;i++) {
-            UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
-            backgroundImageView.frame = CGRectOffset(backgroundImageView.frame, xLeft, 0);
-            [digitPanel addSubview:backgroundImageView];
-            digitImageViews[i] = [[UIImageView alloc] initWithImage:markerImage];
-            digitImageViews[i].autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
-            digitImageViews[i].frame = CGRectOffset(digitImageViews[i].frame, backgroundImageView.frame.origin.x+MARKER_X, MARKER_Y);
-            [digitPanel addSubview:digitImageViews[i]];
-            xLeft += DIGIT_SPACING + backgroundImage.size.width;
-        }
-        passcodeTextField = [[UITextField alloc] initWithFrame:digitPanel.frame];
-        passcodeTextField.hidden = YES;
-    } else {
-        UIView *passcodePanel = [[UIView alloc] initWithFrame:CGRectMake(0, 0, panelWidth, DIGIT_HEIGHT)];
-        passcodePanel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
-        passcodePanel.frame = CGRectOffset(passcodePanel.frame, (contentView.bounds.size.width-passcodePanel.bounds.size.width)/2, PROMPT_HEIGHT);
-        passcodePanel.frame = CGRectInset(passcodePanel.frame, TEXTFIELD_MARGIN, TEXTFIELD_MARGIN);
-        passcodePanel.layer.borderColor = [UIColor colorWithRed:0.65 green:0.67 blue:0.70 alpha:1.0].CGColor;
-        passcodePanel.layer.borderWidth = 1.0;
-        passcodePanel.layer.cornerRadius = 5.0;
-        passcodePanel.layer.shadowColor = [UIColor whiteColor].CGColor;
-        passcodePanel.layer.shadowOffset = CGSizeMake(0, 1);
-        passcodePanel.layer.shadowOpacity = 1.0;
-        passcodePanel.layer.shadowRadius = 1.0;
-        passcodePanel.backgroundColor = [UIColor whiteColor];
-        [contentView addSubview:passcodePanel];
-        passcodeTextField = [[UITextField alloc] initWithFrame:CGRectInset(passcodePanel.frame, 6, 6)];
-    }
+   
+	UIView *digitPanel = [[UIView alloc] initWithFrame:CGRectMake(0, 0, panelWidth, DIGIT_HEIGHT)];
+	digitPanel.frame = CGRectOffset(digitPanel.frame, (contentView.bounds.size.width-digitPanel.bounds.size.width)/2, PROMPT_HEIGHT);
+	digitPanel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+	[contentView addSubview:digitPanel];
+	
+	UIImage *backgroundImage = [UIImage imageNamed:@"passcode_dash"];
+	for (int i=0;i<4;i++) {
+		UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
+		backgroundImageView.contentMode = UIViewContentModeCenter;
+		
+		CGRect digitFrame;
+		digitFrame.size.height = digitPanel.bounds.size.height;
+		digitFrame.size.width = digitPanel.bounds.size.width / 4.0f;
+		digitFrame.origin.y = 0;
+		digitFrame.origin.x = i * digitFrame.size.width;
+		backgroundImageView.frame = digitFrame;
+		
+		digitImageViews[i] = backgroundImageView;
+		[digitPanel addSubview:backgroundImageView];
+	}
+	passcodeTextField = [[UITextField alloc] initWithFrame:digitPanel.frame];
+	passcodeTextField.hidden = YES;
+    
     passcodeTextField.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
     passcodeTextField.borderStyle = UITextBorderStyleNone;
     passcodeTextField.secureTextEntry = YES;
@@ -160,7 +142,7 @@
     messageLabel.numberOfLines = 0;
 	messageLabel.text = _message;
     [contentView addSubview:messageLabel];
-        
+	
     UIImage *failedBg = [[UIImage imageNamed:@"papasscode_failed_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, FAILED_LCAP, 0, FAILED_RCAP)];
     failedImageView = [[UIImageView alloc] initWithImage:failedBg];
     failedImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
@@ -193,11 +175,8 @@
     [super viewDidLoad];
     
     if ([_delegate respondsToSelector:@selector(PAPasscodeViewControllerDidCancel:)]) {
-        if (_simple) {
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
-        } else {
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
-        }
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+        
     }
     
     if (_failedAttempts > 0) {
@@ -323,19 +302,15 @@
 
 - (void)passcodeChanged:(id)sender {
     NSString *text = passcodeTextField.text;
-    if (_simple) {
-        if ([text length] > 4) {
-            text = [text substringToIndex:4];
-        }
-        for (int i=0;i<4;i++) {
-            digitImageViews[i].hidden = i >= [text length];
-        }
-        if ([text length] == 4) {
-            [self handleCompleteField];
-        }
-    } else {
-        self.navigationItem.rightBarButtonItem.enabled = [text length] > 0;
-    }
+	if ([text length] > 4) {
+		text = [text substringToIndex:4];
+	}
+	for (int i=0;i<4;i++) {
+		digitImageViews[i].image = text.length > i ? [UIImage imageNamed:@"passcode_dot"] : [UIImage imageNamed:@"passcode_dash"];
+	}
+	if ([text length] == 4) {
+		[self handleCompleteField];
+	}
 }
 
 - (void)showScreenForPhase:(NSInteger)newPhase animated:(BOOL)animated {
@@ -351,17 +326,6 @@
     }
     phase = newPhase;
     passcodeTextField.text = @"";
-    if (!_simple) {
-        BOOL finalScreen = _action == PasscodeActionSet && phase == 1;
-        finalScreen |= _action == PasscodeActionEnter && phase == 0;
-        finalScreen |= _action == PasscodeActionChange && phase == 2;
-        if (finalScreen) {
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(handleCompleteField)];
-        } else {
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Next", nil) style:UIBarButtonItemStyleBordered target:self action:@selector(handleCompleteField)];
-        }
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-    }
     
     switch (_action) {
         case PasscodeActionSet:
@@ -386,9 +350,11 @@
             }
             break;
     }
-    for (int i=0;i<4;i++) {
-        digitImageViews[i].hidden = YES;
-    }
+	
+	for (int i = 0; i < 4; i++) {
+		digitImageViews[i].image = [UIImage imageNamed:@"passcode_dash"];
+	}
+	
     if (animated) {
         contentView.frame = CGRectOffset(contentView.frame, contentView.frame.size.width*dir, 0);
         [UIView animateWithDuration:SLIDE_DURATION animations:^() {
