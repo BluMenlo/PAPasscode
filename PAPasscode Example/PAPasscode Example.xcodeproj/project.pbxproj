@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C99622518BFE46500020723 /* passcode_dash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C99622118BFE46500020723 /* passcode_dash.png */; };
+		6C99622618BFE46500020723 /* passcode_dash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C99622218BFE46500020723 /* passcode_dash@2x.png */; };
+		6C99622718BFE46500020723 /* passcode_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C99622318BFE46500020723 /* passcode_dot.png */; };
+		6C99622818BFE46500020723 /* passcode_dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C99622418BFE46500020723 /* passcode_dot@2x.png */; };
 		9208C459162C547900D7B1F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9208C458162C547900D7B1F7 /* UIKit.framework */; };
 		9208C45B162C547900D7B1F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9208C45A162C547900D7B1F7 /* Foundation.framework */; };
 		9208C45D162C547900D7B1F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9208C45C162C547900D7B1F7 /* CoreGraphics.framework */; };
@@ -21,15 +25,15 @@
 		9208C478162C547900D7B1F7 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9208C476162C547900D7B1F7 /* ViewController_iPad.xib */; };
 		92471367162CB60D0085CDA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92471366162CB60D0085CDA3 /* QuartzCore.framework */; };
 		92471370162CCA890085CDA3 /* PAPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9247136F162CCA890085CDA3 /* PAPasscodeViewController.m */; };
-		92471377162CCAB30085CDA3 /* papasscode_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 92471371162CCAB30085CDA3 /* papasscode_background.png */; };
-		92471378162CCAB30085CDA3 /* papasscode_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92471372162CCAB30085CDA3 /* papasscode_background@2x.png */; };
 		92471379162CCAB30085CDA3 /* papasscode_failed_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 92471373162CCAB30085CDA3 /* papasscode_failed_bg.png */; };
 		9247137A162CCAB30085CDA3 /* papasscode_failed_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92471374162CCAB30085CDA3 /* papasscode_failed_bg@2x.png */; };
-		9247137B162CCAB30085CDA3 /* papasscode_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 92471375162CCAB30085CDA3 /* papasscode_marker.png */; };
-		9247137C162CCAB30085CDA3 /* papasscode_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92471376162CCAB30085CDA3 /* papasscode_marker@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C99622118BFE46500020723 /* passcode_dash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = passcode_dash.png; path = ../../Assets/passcode_dash.png; sourceTree = "<group>"; };
+		6C99622218BFE46500020723 /* passcode_dash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "passcode_dash@2x.png"; path = "../../Assets/passcode_dash@2x.png"; sourceTree = "<group>"; };
+		6C99622318BFE46500020723 /* passcode_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = passcode_dot.png; path = ../../Assets/passcode_dot.png; sourceTree = "<group>"; };
+		6C99622418BFE46500020723 /* passcode_dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "passcode_dot@2x.png"; path = "../../Assets/passcode_dot@2x.png"; sourceTree = "<group>"; };
 		9208C454162C547900D7B1F7 /* PAPasscode Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PAPasscode Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9208C458162C547900D7B1F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9208C45A162C547900D7B1F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,12 +55,8 @@
 		92471366162CB60D0085CDA3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9247136E162CCA890085CDA3 /* PAPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPasscodeViewController.h; path = ../../PAPasscode/PAPasscodeViewController.h; sourceTree = "<group>"; };
 		9247136F162CCA890085CDA3 /* PAPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPasscodeViewController.m; path = ../../PAPasscode/PAPasscodeViewController.m; sourceTree = "<group>"; };
-		92471371162CCAB30085CDA3 /* papasscode_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = papasscode_background.png; path = ../../Assets/papasscode_background.png; sourceTree = "<group>"; };
-		92471372162CCAB30085CDA3 /* papasscode_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "papasscode_background@2x.png"; path = "../../Assets/papasscode_background@2x.png"; sourceTree = "<group>"; };
 		92471373162CCAB30085CDA3 /* papasscode_failed_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = papasscode_failed_bg.png; path = ../../Assets/papasscode_failed_bg.png; sourceTree = "<group>"; };
 		92471374162CCAB30085CDA3 /* papasscode_failed_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "papasscode_failed_bg@2x.png"; path = "../../Assets/papasscode_failed_bg@2x.png"; sourceTree = "<group>"; };
-		92471375162CCAB30085CDA3 /* papasscode_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = papasscode_marker.png; path = ../../Assets/papasscode_marker.png; sourceTree = "<group>"; };
-		92471376162CCAB30085CDA3 /* papasscode_marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "papasscode_marker@2x.png"; path = "../../Assets/papasscode_marker@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +135,12 @@
 		9247136D162CCA6F0085CDA3 /* PAPasscode */ = {
 			isa = PBXGroup;
 			children = (
-				92471371162CCAB30085CDA3 /* papasscode_background.png */,
-				92471372162CCAB30085CDA3 /* papasscode_background@2x.png */,
+				6C99622118BFE46500020723 /* passcode_dash.png */,
+				6C99622218BFE46500020723 /* passcode_dash@2x.png */,
+				6C99622318BFE46500020723 /* passcode_dot.png */,
+				6C99622418BFE46500020723 /* passcode_dot@2x.png */,
 				92471373162CCAB30085CDA3 /* papasscode_failed_bg.png */,
 				92471374162CCAB30085CDA3 /* papasscode_failed_bg@2x.png */,
-				92471375162CCAB30085CDA3 /* papasscode_marker.png */,
-				92471376162CCAB30085CDA3 /* papasscode_marker@2x.png */,
 				9247136E162CCA890085CDA3 /* PAPasscodeViewController.h */,
 				9247136F162CCA890085CDA3 /* PAPasscodeViewController.m */,
 			);
@@ -198,18 +198,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C99622818BFE46500020723 /* passcode_dot@2x.png in Resources */,
 				9208C463162C547900D7B1F7 /* InfoPlist.strings in Resources */,
 				9208C46B162C547900D7B1F7 /* Default.png in Resources */,
 				9208C46D162C547900D7B1F7 /* Default@2x.png in Resources */,
 				9208C46F162C547900D7B1F7 /* Default-568h@2x.png in Resources */,
 				9208C475162C547900D7B1F7 /* ViewController_iPhone.xib in Resources */,
+				6C99622718BFE46500020723 /* passcode_dot.png in Resources */,
+				6C99622618BFE46500020723 /* passcode_dash@2x.png in Resources */,
 				9208C478162C547900D7B1F7 /* ViewController_iPad.xib in Resources */,
-				92471377162CCAB30085CDA3 /* papasscode_background.png in Resources */,
-				92471378162CCAB30085CDA3 /* papasscode_background@2x.png in Resources */,
 				92471379162CCAB30085CDA3 /* papasscode_failed_bg.png in Resources */,
 				9247137A162CCAB30085CDA3 /* papasscode_failed_bg@2x.png in Resources */,
-				9247137B162CCAB30085CDA3 /* papasscode_marker.png in Resources */,
-				9247137C162CCAB30085CDA3 /* papasscode_marker@2x.png in Resources */,
+				6C99622518BFE46500020723 /* passcode_dash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

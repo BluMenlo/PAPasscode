@@ -12,7 +12,6 @@
 @interface ViewController : UIViewController <PAPasscodeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *passcodeLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *simpleSwitch;
 
 - (IBAction)setPasscode:(id)sender;
 - (IBAction)enterPasscode:(id)sender;

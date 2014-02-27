@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B40A0A65-500F-48A6-A6B8-531CE39F0974</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PAPasscode Example</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>85764D32-DE29-476D-9E91-6111EE6F137B</key>
+		<string>git://github.com/dhennessy/PAPasscode</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PAPasscode Example/PAPasscode Example.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>85764D32-DE29-476D-9E91-6111EE6F137B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>git://github.com/dhennessy/PAPasscode</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>85764D32-DE29-476D-9E91-6111EE6F137B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>85764D32-DE29-476D-9E91-6111EE6F137B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PAPasscode</string>
+		</dict>
+	</array>
+</dict>
+</plist>
