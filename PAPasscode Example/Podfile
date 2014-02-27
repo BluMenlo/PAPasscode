@@ -1,0 +1,7 @@
+
+platform :ios, '7.0'
+
+xcodeproj 'PAPasscode Example.xcodeproj'
+
+pod 'FXBlurView'
+

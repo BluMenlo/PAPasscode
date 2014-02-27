@@ -8,15 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 
-- (void)presentViewController:(UIViewController *)viewControllerToPresent inNavControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
-    UINavigationController *containerNav = [[UINavigationController alloc] initWithRootViewController:viewControllerToPresent];
-    [self presentViewController:containerNav animated:flag completion:completion];
+- (void)presentViewController:(PAPasscodeViewController *)viewControllerToPresent inNavControllerAnimated:(BOOL)flag {
+    [viewControllerToPresent presentInViewController:self];
 }
 
 - (IBAction)setPasscode:(id)sender {
@@ -26,7 +22,7 @@
     }
     passcodeViewController.delegate = self;
     passcodeViewController.simple = _simpleSwitch.on;
-    [self presentViewController:passcodeViewController inNavControllerAnimated:YES completion:nil];
+    [self presentViewController:passcodeViewController inNavControllerAnimated:YES];
 }
 
 - (IBAction)enterPasscode:(id)sender {
@@ -38,7 +34,7 @@
     passcodeViewController.passcode = _passcodeLabel.text;
     passcodeViewController.alternativePasscode = @"9999";
     passcodeViewController.simple = _simpleSwitch.on;
-    [self presentViewController:passcodeViewController inNavControllerAnimated:YES completion:nil];
+    [self presentViewController:passcodeViewController inNavControllerAnimated:YES];
 }
 
 - (IBAction)changePasscode:(id)sender {
@@ -49,7 +45,7 @@
     passcodeViewController.delegate = self;
     passcodeViewController.passcode = _passcodeLabel.text;
     passcodeViewController.simple = _simpleSwitch.on;
-    [self presentViewController:passcodeViewController inNavControllerAnimated:YES completion:nil];
+    [self presentViewController:passcodeViewController inNavControllerAnimated:YES];
 }
 
 #pragma mark - PAPasscodeViewControllerDelegate
@@ -86,4 +82,5 @@
     [self setSimpleSwitch:nil];
     [super viewDidUnload];
 }
+
 @end
