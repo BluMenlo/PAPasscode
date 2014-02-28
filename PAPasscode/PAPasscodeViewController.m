@@ -12,7 +12,7 @@
 
 #define PROMPT_HEIGHT   74
 #define DIGIT_SPACING   10
-#define DIGIT_WIDTH     61
+#define DIGIT_WIDTH     50
 #define DIGIT_HEIGHT    53
 #define MESSAGE_HEIGHT  74
 #define FAILED_LCAP     19

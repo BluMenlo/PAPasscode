@@ -12,6 +12,11 @@
 #import <Accelerate/Accelerate.h>
 
 
+
+const int blurIterations = 3;
+const float blurRadius = 40;
+
+
 @interface UIImage (Blur)
 - (UIImage *)blurredImageWithRadius:(CGFloat)radius iterations:(NSUInteger)iterations tintColor:(UIColor *)tintColor;
 @end
@@ -26,6 +31,8 @@
 		self.passcodeVC = passcodeVC;
 		UIImage *snapshot = [[PAPasscodeContainerViewController snapshotOfView:bg] blurredImageWithRadius:5 iterations:3 tintColor:nil];
 		self.blurredImage = snapshot;
+		
+		self.passcodeVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     }
     return self;
 }
@@ -42,9 +49,6 @@
 - (void)loadView {
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		UIImageView *blurView = [[UIImageView alloc] initWithImage:self.blurredImage];
-//		blurView.backgroundColor = [UIColor blackColor];
-//		blurView.alpha = 0.3;
-//		blurView.opaque = NO;
 		self.view = blurView;
 	} else {
 		self.view = [[UIView alloc] init];
@@ -57,15 +61,19 @@
 	}
 }
 
+- (void)cancel {
+	
+	[self dismissViewControllerAnimated:YES completion:^{
+		[self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+	}];
+}
+
 //	inspired / borrowed from https://github.com/nicklockwood/FXBlurView/blob/master/FXBlurView/FXBlurView.m
 + (UIImage *)snapshotOfView:(UIView *)view {
-	const int iterations = 3;
-	const float blurRadius = 40;
-	
 	CGFloat scale = 0.5;
-	if (iterations)
+	if (blurIterations)
 	{
-		CGFloat blockSize = 12.0f/iterations;
+		CGFloat blockSize = 12.0f/blurIterations;
 		scale = blockSize/MAX(blockSize * 2, blurRadius);
 		scale = 1.0f/floorf(1.0f/scale);
 	}
@@ -90,6 +98,7 @@
 
 @implementation UIImage (Blur)
 
+//	inspired / borrowed from https://github.com/nicklockwood/FXBlurView/blob/master/FXBlurView/FXBlurView.m
 - (UIImage *)blurredImageWithRadius:(CGFloat)radius iterations:(NSUInteger)iterations tintColor:(UIColor *)tintColor
 {
     //image must be nonzero size
