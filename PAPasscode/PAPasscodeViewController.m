@@ -8,7 +8,6 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "PAPasscodeViewController.h"
-#import "PAPasscodeContainerViewController.h"
 
 #define PROMPT_HEIGHT   74
 #define DIGIT_SPACING   10
@@ -368,14 +367,6 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-
-#pragma mark Presentation
-
-- (void)presentInViewController:(UIViewController *)vc {
-	PAPasscodeContainerViewController *container = [[PAPasscodeContainerViewController alloc] initWithPasscodeVC:self backgroundView:vc.view];
-	[vc presentViewController:container animated:NO completion:nil];
 }
 
 @end

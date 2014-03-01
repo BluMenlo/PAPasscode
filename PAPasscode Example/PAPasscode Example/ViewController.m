@@ -12,7 +12,8 @@
 @implementation ViewController
 
 - (void)presentViewController:(PAPasscodeViewController *)viewControllerToPresent inNavControllerAnimated:(BOOL)flag {
-    [viewControllerToPresent presentInViewController:self];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewControllerToPresent];
+	[self presentViewController:nav animated:flag completion:nil];
 }
 
 - (IBAction)setPasscode:(id)sender {

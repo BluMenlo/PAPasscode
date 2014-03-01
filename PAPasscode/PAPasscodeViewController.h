@@ -54,7 +54,4 @@ typedef enum {
 
 - (id)initForAction:(PasscodeAction)action;
 
-//	wraps itself in a passcode container and a nav vc to present
-- (void)presentInViewController:(UIViewController *)vc;
-
 @end

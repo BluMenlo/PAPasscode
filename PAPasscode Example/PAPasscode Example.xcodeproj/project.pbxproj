@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C99621C18BF9EBF00020723 /* PAPasscodeContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C99621B18BF9EBF00020723 /* PAPasscodeContainerViewController.m */; };
 		6C99622D18BFE76B00020723 /* passcode_dash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C99622918BFE76B00020723 /* passcode_dash.png */; };
 		6C99622E18BFE76B00020723 /* passcode_dash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C99622A18BFE76B00020723 /* passcode_dash@2x.png */; };
 		6C99622F18BFE76B00020723 /* passcode_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C99622B18BFE76B00020723 /* passcode_dot.png */; };
@@ -34,8 +33,6 @@
 /* Begin PBXFileReference section */
 		06848AD563EA471D848931FE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		165D81BC23F54BEEAC5A6645 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C99621A18BF9EBF00020723 /* PAPasscodeContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPasscodeContainerViewController.h; path = ../../PAPasscode/PAPasscodeContainerViewController.h; sourceTree = "<group>"; };
-		6C99621B18BF9EBF00020723 /* PAPasscodeContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPasscodeContainerViewController.m; path = ../../PAPasscode/PAPasscodeContainerViewController.m; sourceTree = "<group>"; };
 		6C99622918BFE76B00020723 /* passcode_dash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = passcode_dash.png; path = ../../Assets/passcode_dash.png; sourceTree = "<group>"; };
 		6C99622A18BFE76B00020723 /* passcode_dash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "passcode_dash@2x.png"; path = "../../Assets/passcode_dash@2x.png"; sourceTree = "<group>"; };
 		6C99622B18BFE76B00020723 /* passcode_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = passcode_dot.png; path = ../../Assets/passcode_dot.png; sourceTree = "<group>"; };
@@ -152,8 +149,6 @@
 				92471374162CCAB30085CDA3 /* papasscode_failed_bg@2x.png */,
 				9247136E162CCA890085CDA3 /* PAPasscodeViewController.h */,
 				9247136F162CCA890085CDA3 /* PAPasscodeViewController.m */,
-				6C99621A18BF9EBF00020723 /* PAPasscodeContainerViewController.h */,
-				6C99621B18BF9EBF00020723 /* PAPasscodeContainerViewController.m */,
 			);
 			name = PAPasscode;
 			sourceTree = "<group>";
@@ -270,7 +265,6 @@
 				9208C469162C547900D7B1F7 /* AppDelegate.m in Sources */,
 				9208C472162C547900D7B1F7 /* ViewController.m in Sources */,
 				92471370162CCA890085CDA3 /* PAPasscodeViewController.m in Sources */,
-				6C99621C18BF9EBF00020723 /* PAPasscodeContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
